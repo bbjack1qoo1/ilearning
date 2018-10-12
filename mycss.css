@@ -1,0 +1,59 @@
+/*Avoid navbar block the content
+body{
+    padding-top: 0px; 
+
+}
+
+html,body,ul,li
+{  
+    margin:0;
+    border:0;
+    font-size:100%;
+    vertical-align:baseline
+}
+*/
+
+body{
+    
+}
+
+nav{
+    font-family: Microsoft JhengHei;
+}
+
+/*navbar->a color*/
+#nava{
+    color: white;
+}
+
+h3{
+    font-size: 45px;
+    font-weight: bold;
+    font-family: Microsoft JhengHei;
+}
+
+p{
+    font-size: 20px;
+    font-family: Microsoft JhengHei;
+}
+
+#copyright{
+    font-size: 15px;
+}
+
+#jumbotron{
+    height: 400px;
+    background-image: url("https://images-cn.ssl-images-amazon.com/images/S/amazon.job-cms-website.paperclip.prod/teams/338/images/amazonai-hiring-banner-1440x425.jpg?1485975434");
+    background-size:cover;
+}
+
+#review{
+    padding-top: 50px; 
+}        
+
+.btn-outline-primary {
+    color: #007bff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #007bff;
+}
