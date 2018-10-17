@@ -1,15 +1,42 @@
-<html lang="en">
+<?php
+/* Smarty version 3.1.33, created on 2018-10-17 09:50:59
+  from 'D:\www\templates\index.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5bc6e9e3756b26_94721673',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '5364140732121de2dca3070512f1a1638122b97c' => 
+    array (
+      0 => 'D:\\www\\templates\\index.html',
+      1 => 1539762658,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5bc6e9e3756b26_94721673 (Smarty_Internal_Template $_smarty_tpl) {
+?><html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>TEST</title>
+    <title>起始畫面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <?php echo '<script'; ?>
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
 
-    <link rel="stylesheet" type="text/css" href="mycss.css">
+    <link rel="stylesheet" type="text/css" href="templates/CSS/mycss.css">
 
 </head>
 <body>
@@ -17,13 +44,15 @@
     <nav class="navbar navbar-fixed-top" >
         <div class="container-fluid" >
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html" id="nava">越南學習</a>
+                <a class="navbar-brand" href="index.html" id="nava">越南學習V1</a>
             </div>
             <div class="collapse navbar-collapse" id="link" >
                 <ul class="nav navbar-nav navbar-right " >
-                    <li><a href="#.php" id="nava">登入</a></li>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+.php" id="nava"><?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+</a></li>
                     <li><a href="#.php" id="nava">管理</a></li>
-                    <li><a href="#.php" id="nava">說明</a></li>
+                    <li><a href="/templates/info.html" id="nava">說明</a></li>
                 </ul>
             </div>
         </div>
@@ -31,9 +60,14 @@
 
     <div class="jumbotron bg-success" id="jumbotron">
         <div class="container" align="center" style="color:white">
-            <h3>WELCOME</h3>
+            <h3>WELCOME <?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+</h3>
             <h1>NSYSU SMART LEARNING</h1>
         </div>
+    </div>
+
+    <div class="container" >
+        <a href="test.php" id="btn_test" type="btn_test" class="btn btn-primary btn-lg btn-block">測驗</a>
     </div>
 
     <div class="container" style="padding-bottom: 20%">
@@ -42,7 +76,7 @@
             <div class="col-sm-6" id="difficult">
                 <h3 align="center">程度列表</h3>
                 <div class="list-group" style="font-family: Microsoft JhengHei" align="center">
-                    <a href="#1" class="list-group-item list-group-item-action" style="font-weight: bold">字母</a>
+                    <a href="teach.php" class="list-group-item list-group-item-action" style="font-weight: bold">字母</a>
                     <a href="#2" class="list-group-item list-group-item-action" style="font-weight: bold">日常對話(1)</a>
                     <a href="#3" class="list-group-item list-group-item-action" style="font-weight: bold">...</a>
                     <a href="#4" class="list-group-item list-group-item-action" style="font-weight: bold">...</a>
@@ -70,4 +104,5 @@
     <hr />
     <p align="center" id="copyright">Designed by HSNL</p>
 </body>
-</html>
+</html><?php }
+}

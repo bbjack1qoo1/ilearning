@@ -13,9 +13,6 @@ html,body,ul,li
 }
 */
 
-body{
-    
-}
 
 nav{
     font-family: Microsoft JhengHei;
@@ -35,6 +32,11 @@ h3{
 p{
     font-size: 20px;
     font-family: Microsoft JhengHei;
+}
+
+#btn_test{
+    background-color:brown; 
+    font-family:Microsoft JhengHei;
 }
 
 #copyright{
