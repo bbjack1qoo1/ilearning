@@ -1,0 +1,78 @@
+<?php
+/* Smarty version 3.1.33, created on 2018-10-19 11:19:46
+  from 'D:\xampp\htdocs\ilearning\templates\normtest.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5bc9a1b2d358a5_87096043',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '98f06505b1c692ad32e75df7da0a60da90fdb420' => 
+    array (
+      0 => 'D:\\xampp\\htdocs\\ilearning\\templates\\normtest.html',
+      1 => 1539940786,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5bc9a1b2d358a5_87096043 (Smarty_Internal_Template $_smarty_tpl) {
+?><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <?php echo '<script'; ?>
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+>
+    	
+
+    <?php echo '</script'; ?>
+>
+
+
+    <title>常模測驗</title>
+</head>
+<body>
+	<div class="container">
+		<h3>題號:<?php echo $_smarty_tpl->tpl_vars['question_number']->value;?>
+</h3>
+	</div>
+    <div class="container" style="display: flex; justify-content: center; background: blue;">
+    	<audio >
+    		<source src="templates/audio/normtest/unitsound/第一題.mp3" type="">
+    	</audio>
+    </div>
+    <div class="container">
+    	<div class="row text-center" style="background: gray; display: flex; justify-content: center;">
+    		<div class="col-sm-4" style="background: white;">
+    			<button class="btn"> A </button>
+    		</div>
+    		<div class="col-sm-4" style="background: white;">
+    			<button class="btn"> B </button>
+    		</div>
+    	</div>
+    	<div class="row text-center" style="background: gray; display: flex; justify-content: center;">
+    		<div class="col-sm-4" style="background: white;">
+    			<button class="btn"> C </button>
+    		</div>
+    		<div class="col-sm-4" style="background: white;">
+    			<button class="btn"> D </button>
+    		</div>
+    	</div>
+    </div>
+</body>
+</html><?php }
+}

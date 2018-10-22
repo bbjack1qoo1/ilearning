@@ -1,4 +1,27 @@
-<html lang="en">
+<?php
+/* Smarty version 3.1.33, created on 2018-10-20 09:32:42
+  from 'D:\xampp\htdocs\ilearning\templates\index.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5bcada1ab22d04_55770359',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '3fa9a47752206bb505d008f23f4a0541bb66d0a7' => 
+    array (
+      0 => 'D:\\xampp\\htdocs\\ilearning\\templates\\index.html',
+      1 => 1540020756,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5bcada1ab22d04_55770359 (Smarty_Internal_Template $_smarty_tpl) {
+?><html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,8 +29,12 @@
     <title>起始畫面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <?php echo '<script'; ?>
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
 
     <link rel="stylesheet" type="text/css" href="templates/CSS/mycss.css">
 
@@ -21,7 +48,9 @@
             </div>
             <div class="collapse navbar-collapse" id="link" >
                 <ul class="nav navbar-nav navbar-right " >
-                    <li><a href="{$login}.php" id="nava">{$login}</a></li>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+.php" id="nava"><?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+</a></li>
                     <li><a href="#.php" id="nava">管理</a></li>
                     <li><a href="/templates/info.html" id="nava">說明</a></li>
                 </ul>
@@ -31,7 +60,8 @@
 
     <div class="jumbotron bg-success" id="jumbotron">
         <div class="container" align="center" style="color:white">
-            <h3>WELCOME {$username}</h3>
+            <h3>WELCOME <?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+</h3>
             <h1>NSYSU SMART LEARNING</h1>
         </div>
     </div>
@@ -74,4 +104,5 @@
     <hr />
     <p align="center" id="copyright">Designed by HSNL</p>
 </body>
-</html>
+</html><?php }
+}
