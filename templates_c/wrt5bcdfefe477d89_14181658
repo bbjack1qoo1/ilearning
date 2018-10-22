@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-22 19:12:25
+/* Smarty version 3.1.33, created on 2018-10-22 18:46:54
   from 'D:\xampp\htdocs\ilearning\templates\normtest.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bce04f9151760_61660773',
+  'unifunc' => 'content_5bcdfefe476ad0_52532658',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '98f06505b1c692ad32e75df7da0a60da90fdb420' => 
     array (
       0 => 'D:\\xampp\\htdocs\\ilearning\\templates\\normtest.html',
-      1 => 1540228345,
+      1 => 1540226814,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bce04f9151760_61660773 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bcdfefe476ad0_52532658 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -58,34 +58,34 @@ function content_5bce04f9151760_61660773 (Smarty_Internal_Template $_smarty_tpl)
 
 	</div>
 	<!-- 題目及測驗整體 zone-->
-	<div class="container text-center" id="test_zone">		
+	<div class="container text-center">		
 		<!-- 題號區 -->
 		<div class="container">
 			<h2><span id="question_type"></span></h2>
 			<h3>第 <span id="question_num"></span> 題</h3>
 		</div>
 		<!-- 第一部 -->
-		<div id="part1_container" class="container" style=" justify-content: center;">
+		<div id="part1_container" class="container" >
 			<!-- 音檔播放區 -->
-		    <div class="container" >
+		    <div class="container" style="justify-content: center;">
 		    	<audio id="audio" src="" controls="controls" controlsList="nodownload" oncontextmenu="return false">
 		    	</audio>
 		    </div>
 		    <!-- 選擇區 -->
-		    <div class="col-sm-offset-4" >
+		    <div class="container" style="justify-content: center;" >
 		    	<div class="row" >
-		    		<div class="col-sm-3" >
+		    		<div class="col-sm-4" >
 		    			<button class="btn" onclick="clickoption('A');">A : <span id="option_a">none</span></button>
 		    		</div>
-		    		<div class="col-sm-3" >
+		    		<div class="col-sm-4" >
 		    			<button class="btn" onclick="clickoption('B');">B : <span id="option_b">none</span></button>
 		    		</div>
 		    	</div>
 		    	<div class="row " >
-		    		<div class="col-sm-3" >
+		    		<div class="col-sm-4" >
 		    			<button class="btn" onclick="clickoption('C');">C : <span id="option_c">none</span> </button>
 		    		</div>
-		    		<div class="col-sm-3" >
+		    		<div class="col-sm-4" >
 		    			<button class="btn" onclick="clickoption('D');">D : <span id="option_d">none</span> </button>
 		    		</div>
 		    	</div>
@@ -95,7 +95,7 @@ function content_5bce04f9151760_61660773 (Smarty_Internal_Template $_smarty_tpl)
 
 
 	    <!-- 第二部分 -->
-	    <div class="container" style="  justify-content: center; display: none;" id="part2_container">
+	    <div class="container" style="display: flex;  justify-content: center;" id="part2_container">
 	    	<!-- 題目選擇區 -->
 	    	<div class="row" style="justify-content: center;"> <strong><h3 id="part2_question"></h3></strong></div>
 	    	<div class="container col-sm-4  col-sm-offset-4">
@@ -121,17 +121,17 @@ function content_5bce04f9151760_61660773 (Smarty_Internal_Template $_smarty_tpl)
 	    </div>
 
 	    <!-- 確認 -->
-	    <div class="col-sm-5 col-sm-offset-4" style=" justify-content: center; padding-top: 20px;">
-	    	<strong>你的選擇 : <span id="choosen_option"></span> 。 </strong>
+	    <div class="container" style="display: flex; justify-content: center; padding-top: 20px;">
+	    	<div class="col-sm-3 text-center"><strong>你的選擇 : <span id="choosen_option"></span></strong></div>
 	    	<button id="commit_btn" type="button" disabled="" onclick="commitanswer();" class="btn">確認</button>
 	    </div>
 
 	</div>
 	
     <!-- 測驗結束後 zone -->
-    <div id="thank_zone" class="container" style="display: none; justify-content: center;">
+    <div id="thank_zone" class="container" style="display: none; ">
     	<!-- 作答情形區 -->
-    	<div class="container col-sm-3 col-sm-offset-4 text-center">
+    	<div class="container col-sm-3 text-center">
     	   	<h2 class="row">Thanks for Testing </h2>
     	   	<table class="table">
 	    		<thead>
