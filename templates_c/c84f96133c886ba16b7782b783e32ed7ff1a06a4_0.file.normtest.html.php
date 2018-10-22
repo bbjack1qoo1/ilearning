@@ -1,4 +1,27 @@
-<html lang="en">
+<?php
+/* Smarty version 3.1.33, created on 2018-10-22 16:40:29
+  from 'C:\Users\a0979\Documents\GitHub\ilearning\templates\normtest.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5bcde15d895a28_60092245',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'c84f96133c886ba16b7782b783e32ed7ff1a06a4' => 
+    array (
+      0 => 'C:\\Users\\a0979\\Documents\\GitHub\\ilearning\\templates\\normtest.html',
+      1 => 1540218767,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5bcde15d895a28_60092245 (Smarty_Internal_Template $_smarty_tpl) {
+?><html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,9 +29,15 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="templates/normtest.js"></script>
+    <?php echo '<script'; ?>
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ type="text/javascript" src="templates/normtest.js"><?php echo '</script'; ?>
+>
 	<link rel="stylesheet" type="text/css" href="templates/CSS/navbar.css">
 
 	<title>常模測驗</title>
@@ -59,7 +88,9 @@
 		<li id="navbar_li"><a class="active" href="index.php" class="nav navbar-inverse" >Home</a></li>
 		<li id="navbar_li" style="float:right"><a href="info.php" >說明</a></li>
 		<li id="navbar_li" style="float:right"><a href="#.php" >管理</a></li>
-		<li id="navbar_li" style="float:right"><a href="{$login}.php" >{$login}</a></li>
+		<li id="navbar_li" style="float:right"><a href="<?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+.php" ><?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+</a></li>
 	</ul>
 
 	</div>
@@ -124,4 +155,5 @@
     	</div>
     </div>
 </body>
-</html>
+</html><?php }
+}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-19 07:38:12
+/* Smarty version 3.1.33, created on 2018-10-22 16:42:32
   from 'C:\Users\a0979\Documents\GitHub\ilearning\templates\index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc96dc49e7724_18440929',
+  'unifunc' => 'content_5bcde1d88490c4_24300252',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6f5e82741f88a941bac985d97e7b06b536443567' => 
     array (
       0 => 'C:\\Users\\a0979\\Documents\\GitHub\\ilearning\\templates\\index.html',
-      1 => 1539765301,
+      1 => 1540219351,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bc96dc49e7724_18440929 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bcde1d88490c4_24300252 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,10 +37,11 @@ function content_5bc96dc49e7724_18440929 (Smarty_Internal_Template $_smarty_tpl)
 >
 
     <link rel="stylesheet" type="text/css" href="templates/CSS/mycss.css">
+    <link rel="stylesheet" type="text/css" href="templates/CSS/navbar.css">
 
 </head>
 <body>
-    
+    <!--
     <nav class="navbar navbar-fixed-top" >
         <div class="container-fluid" >
             <div class="navbar-header">
@@ -57,6 +58,15 @@ function content_5bc96dc49e7724_18440929 (Smarty_Internal_Template $_smarty_tpl)
             </div>
         </div>
     </nav> 
+    -->
+    <ul id="navbar_ul">
+        <li id="navbar_li"><a class="active" href="index.php" class="nav navbar-inverse" >Home</a></li>
+        <li id="navbar_li" style="float:right"><a href="info.php" >說明</a></li>
+        <li id="navbar_li" style="float:right"><a href="#.php" >管理</a></li>
+		<li id="navbar_li" style="float:right"><a href="<?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+.php" ><?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+</a></li>
+  	</ul>
 
     <div class="jumbotron bg-success" id="jumbotron">
         <div class="container" align="center" style="color:white">
@@ -67,7 +77,7 @@ function content_5bc96dc49e7724_18440929 (Smarty_Internal_Template $_smarty_tpl)
     </div>
 
     <div class="container" >
-        <a href="test.php" id="btn_test" type="btn_test" class="btn btn-primary btn-lg btn-block">測驗</a>
+        <a href="normtest.php" id="btn_test" type="btn_test" class="btn btn-primary btn-lg btn-block">測驗</a>
     </div>
 
     <div class="container" style="padding-bottom: 20%">

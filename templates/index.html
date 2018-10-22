@@ -10,10 +10,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="templates/CSS/mycss.css">
+    <link rel="stylesheet" type="text/css" href="templates/CSS/navbar.css">
 
 </head>
 <body>
-    
+    <!--
     <nav class="navbar navbar-fixed-top" >
         <div class="container-fluid" >
             <div class="navbar-header">
@@ -28,6 +29,13 @@
             </div>
         </div>
     </nav> 
+    -->
+    <ul id="navbar_ul">
+        <li id="navbar_li"><a class="active" href="index.php" class="nav navbar-inverse" >Home</a></li>
+        <li id="navbar_li" style="float:right"><a href="info.php" >說明</a></li>
+        <li id="navbar_li" style="float:right"><a href="#.php" >管理</a></li>
+		<li id="navbar_li" style="float:right"><a href="{$login}.php" >{$login}</a></li>
+  	</ul>
 
     <div class="jumbotron bg-success" id="jumbotron">
         <div class="container" align="center" style="color:white">
