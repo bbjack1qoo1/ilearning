@@ -9,6 +9,8 @@
         $account = $_POST["account"];
         $password = $_POST["password"];
 
+        $login_time = date("Y-m-d  H:i:s");
+
         $servername = "localhost";
         $dbaccount = "root";
         $dbpassword = "";
@@ -44,6 +46,7 @@
             $_SESSION["account"] = $row["account"];
             $_SESSION["username"] = $row["username"];
             header("Location: index.php");
+
         }
         else{
             header("Location: login.php");
@@ -52,6 +55,41 @@
         $stmt->close();
         $db->close();
 
+        //step 1 connect
+        $db = new mysqli($servername, $dbaccount, $dbpassword, $dbname);
+            
+        //Check connection
+        if ($db->connect_error) {
+            die("Connection failed: " . $db->connect_error);
+        }
+        //step 2  prepare
+        $db->set_charset("utf8");
+
+        $sql = "UPDATE  login SET login_time=? WHERE account=?";
+
+        $stmt = $db->prepare($sql);
+        if (!$stmt) {
+            die("Connection failed: " . $db->connect_error);
+        } 
+
+        //step 3 bind_param  
+        if(!$stmt->bind_param('ss', $login_time, $account)) die($stmt->error);
+
+
+        //step 4 execute
+        if (!$stmt->execute()) 
+            die("Error:".$stmt->error);
+        else
+        {
+            //echo $stmt->insert_id;
+            $stmt->close();
+            $db->close();
+            //header("Location: login.php");
+        }
+
+        
+        $stmt->close();
+        $db->close();
     }
     else
     {

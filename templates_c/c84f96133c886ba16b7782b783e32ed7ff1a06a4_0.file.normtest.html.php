@@ -1,4 +1,27 @@
-<html lang="en">
+<?php
+/* Smarty version 3.1.33, created on 2018-10-22 16:40:29
+  from 'C:\Users\a0979\Documents\GitHub\ilearning\templates\normtest.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5bcde15d895a28_60092245',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'c84f96133c886ba16b7782b783e32ed7ff1a06a4' => 
+    array (
+      0 => 'C:\\Users\\a0979\\Documents\\GitHub\\ilearning\\templates\\normtest.html',
+      1 => 1540218767,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5bcde15d895a28_60092245 (Smarty_Internal_Template $_smarty_tpl) {
+?><html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,18 +29,15 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<<<<<<< HEAD
-    <script type="text/javascript" src="templates/normtest.js"></script>
-
-
-    <title>常模測驗</title>
-</head>
-<body>
-	<!-- 登入後資訊區 navbar-->
-=======
-	<script type="text/javascript" src="templates/normtest.js"></script>
+    <?php echo '<script'; ?>
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ type="text/javascript" src="templates/normtest.js"><?php echo '</script'; ?>
+>
 	<link rel="stylesheet" type="text/css" href="templates/CSS/navbar.css">
 
 	<title>常模測驗</title>
@@ -52,7 +72,6 @@
 <body>
 	<!-- 登入後資訊區 -->
 	<!--
->>>>>>> e1aeca1997ed972b9ca9ef7d2d05ddbb0485daa2
 	<div class="navbar navbar-inverse">
 		<div class="container-fluid">
     		<div class="navbar-header">
@@ -63,101 +82,25 @@
       		<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     	</ul>
   </div>
-<<<<<<< HEAD
-
-
-	</div>
-	<!-- 題目及測驗整體 zone-->
-	<div class="container text-center" id="test_zone">		
-=======
 	-->
 
 	<ul id="navbar_ul">
 		<li id="navbar_li"><a class="active" href="index.php" class="nav navbar-inverse" >Home</a></li>
 		<li id="navbar_li" style="float:right"><a href="info.php" >說明</a></li>
 		<li id="navbar_li" style="float:right"><a href="#.php" >管理</a></li>
-		<li id="navbar_li" style="float:right"><a href="{$login}.php" >{$login}</a></li>
+		<li id="navbar_li" style="float:right"><a href="<?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+.php" ><?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+</a></li>
 	</ul>
 
 	</div>
 	<!-- 題目及測驗整體 -->
 	<div id="test_zone" class="container text-center">		
->>>>>>> e1aeca1997ed972b9ca9ef7d2d05ddbb0485daa2
 		<!-- 題號區 -->
 		<div class="container">
 			<h2><span id="question_type"></span></h2>
 			<h3>第 <span id="question_num"></span> 題</h3>
 		</div>
-<<<<<<< HEAD
-		<!-- 第一部 -->
-		<div id="part1_container" class="container" style=" justify-content: center;">
-			<!-- 音檔播放區 -->
-		    <div class="container" >
-		    	<audio id="audio" src="" controls="controls" controlsList="nodownload" oncontextmenu="return false">
-		    	</audio>
-		    </div>
-		    <!-- 選擇區 -->
-		    <div class="col-sm-offset-4" >
-		    	<div class="row" >
-		    		<div class="col-sm-3" >
-		    			<button class="btn" onclick="clickoption('A');">A : <span id="option_a">none</span></button>
-		    		</div>
-		    		<div class="col-sm-3" >
-		    			<button class="btn" onclick="clickoption('B');">B : <span id="option_b">none</span></button>
-		    		</div>
-		    	</div>
-		    	<div class="row " >
-		    		<div class="col-sm-3" >
-		    			<button class="btn" onclick="clickoption('C');">C : <span id="option_c">none</span> </button>
-		    		</div>
-		    		<div class="col-sm-3" >
-		    			<button class="btn" onclick="clickoption('D');">D : <span id="option_d">none</span> </button>
-		    		</div>
-		    	</div>
-		    </div>
-		</div>
-		
-
-
-	    <!-- 第二部分 -->
-	    <div class="container" style="  justify-content: center; display: none;" id="part2_container">
-	    	<!-- 題目選擇區 -->
-	    	<div class="row" style="justify-content: center;"> <strong><h3 id="part2_question"></h3></strong></div>
-	    	<div class="container col-sm-4  col-sm-offset-4">
-				
-	    		<div class="row">
-	    			<button class="btn" id="part2_option_a" onclick="clickoption('A')"><strong>A</strong><audio id="part2_audio_a" src="" controls="controls" controlsList="nodownload"></audio></button>
-	    		</div>
-				
-				<div class="row">
-					<button class="btn" id="part2_option_b" onclick="clickoption('B')"><strong>B</strong><audio id="part2_audio_b" src="" controls="controls" controlsList="nodownload"></audio></button>
-				</div>
-
-				<div class="row">
-					<button class="btn" id="part2_option_c" onclick="clickoption('C')"><strong>C</strong><audio id="part2_audio_c" src="" controls="controls" controlsList="nodownload"></audio></button>
-				</div>
-	    	
-	    		<div class="row">
-	    			<button class="btn" id="part2_option_d" onclick="clickoption('D')"><strong>D</strong><audio id="part2_audio_d" src="" controls="controls" controlsList="nodownload"></audio></button>
-	    		</div>
-
-	    	</div>
-	    	
-	    </div>
-
-	    <!-- 確認 -->
-	    <div class="col-sm-5 col-sm-offset-4" style=" justify-content: center; padding-top: 20px;">
-	    	<strong>你的選擇 : <span id="choosen_option"></span> 。 </strong>
-	    	<button id="commit_btn" type="button" disabled="" onclick="commitanswer();" class="btn">確認</button>
-	    </div>
-
-	</div>
-	
-    <!-- 測驗結束後 zone -->
-    <div id="thank_zone" class="container" style="display: none; justify-content: center;">
-    	<!-- 作答情形區 -->
-    	<div class="container col-sm-3 col-sm-offset-4 text-center">
-=======
 		<!-- 音檔播放區 -->
 	    <div class="container" style="display: flex; justify-content: center; ">
 	    	<audio id="audio" src="" controls="controls">
@@ -194,7 +137,6 @@
     <div id="thank_zone" class="container" style="display: none; ">
     	<!-- 作答情形區 -->
     	<div class="container col-sm-3 text-center">
->>>>>>> e1aeca1997ed972b9ca9ef7d2d05ddbb0485daa2
     	   	<h2 class="row">Thanks for Testing </h2>
     	   	<table class="table">
 	    		<thead>
@@ -213,4 +155,5 @@
     	</div>
     </div>
 </body>
-</html>
+</html><?php }
+}

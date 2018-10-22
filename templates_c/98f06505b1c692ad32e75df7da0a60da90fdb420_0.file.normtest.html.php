@@ -1,18 +1,30 @@
 <?php
+<<<<<<< HEAD
 /* Smarty version 3.1.33, created on 2018-10-22 19:12:25
+=======
+/* Smarty version 3.1.33, created on 2018-10-22 06:48:34
+>>>>>>> e1aeca1997ed972b9ca9ef7d2d05ddbb0485daa2
   from 'D:\xampp\htdocs\ilearning\templates\normtest.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
+<<<<<<< HEAD
   'unifunc' => 'content_5bce04f9151760_61660773',
+=======
+  'unifunc' => 'content_5bcd56a242ebc5_37559325',
+>>>>>>> e1aeca1997ed972b9ca9ef7d2d05ddbb0485daa2
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '98f06505b1c692ad32e75df7da0a60da90fdb420' => 
     array (
       0 => 'D:\\xampp\\htdocs\\ilearning\\templates\\normtest.html',
+<<<<<<< HEAD
       1 => 1540228345,
+=======
+      1 => 1540183714,
+>>>>>>> e1aeca1997ed972b9ca9ef7d2d05ddbb0485daa2
       2 => 'file',
     ),
   ),
@@ -20,7 +32,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
+<<<<<<< HEAD
 function content_5bce04f9151760_61660773 (Smarty_Internal_Template $_smarty_tpl) {
+=======
+function content_5bcd56a242ebc5_37559325 (Smarty_Internal_Template $_smarty_tpl) {
+>>>>>>> e1aeca1997ed972b9ca9ef7d2d05ddbb0485daa2
 ?><html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -43,7 +59,11 @@ function content_5bce04f9151760_61660773 (Smarty_Internal_Template $_smarty_tpl)
     <title>常模測驗</title>
 </head>
 <body>
+<<<<<<< HEAD
 	<!-- 登入後資訊區 navbar-->
+=======
+	<!-- 登入後資訊區 -->
+>>>>>>> e1aeca1997ed972b9ca9ef7d2d05ddbb0485daa2
 	<div class="navbar navbar-inverse">
 		<div class="container-fluid">
     		<div class="navbar-header">
@@ -57,13 +77,19 @@ function content_5bce04f9151760_61660773 (Smarty_Internal_Template $_smarty_tpl)
 
 
 	</div>
+<<<<<<< HEAD
 	<!-- 題目及測驗整體 zone-->
 	<div class="container text-center" id="test_zone">		
+=======
+	<!-- 題目及測驗整體 -->
+	<div id="test_zone" class="container text-center">		
+>>>>>>> e1aeca1997ed972b9ca9ef7d2d05ddbb0485daa2
 		<!-- 題號區 -->
 		<div class="container">
 			<h2><span id="question_type"></span></h2>
 			<h3>第 <span id="question_num"></span> 題</h3>
 		</div>
+<<<<<<< HEAD
 		<!-- 第一部 -->
 		<div id="part1_container" class="container" style=" justify-content: center;">
 			<!-- 音檔播放區 -->
@@ -132,6 +158,44 @@ function content_5bce04f9151760_61660773 (Smarty_Internal_Template $_smarty_tpl)
     <div id="thank_zone" class="container" style="display: none; justify-content: center;">
     	<!-- 作答情形區 -->
     	<div class="container col-sm-3 col-sm-offset-4 text-center">
+=======
+		<!-- 音檔播放區 -->
+	    <div class="container" style="display: flex; justify-content: center; ">
+	    	<audio id="audio" src="" controls="controls">
+	    	</audio>
+	    </div>
+	    <!-- 選擇區 -->
+	    <div class="container" >
+	    	<div class="row" style=" display: flex; justify-content: center;">
+	    		<div class="col-sm-4" >
+	    			<button class="btn" onclick="clickoption('A');">A : <span id="option_a">none</span></button>
+	    		</div>
+	    		<div class="col-sm-4" >
+	    			<button class="btn" onclick="clickoption('B');">B : <span id="option_b">none</span></button>
+	    		</div>
+	    	</div>
+	    	<div class="row " style=" display: flex; justify-content: center;">
+	    		<div class="col-sm-4" >
+	    			<button class="btn" onclick="clickoption('C');">C : <span id="option_c">none</span> </button>
+	    		</div>
+	    		<div class="col-sm-4" >
+	    			<button class="btn" onclick="clickoption('D');">D : <span id="option_d">none</span> </button>
+	    		</div>
+	    	</div>
+	    </div>
+	    <!-- 確認 -->
+	    <div class="container" style="display: flex; justify-content: center; padding-top: 20px;">
+	    	<div class="col-sm-3 text-center"><strong>你的選擇 : <span id="choosen_option"></span></strong></div>
+	    	<button id="commit_btn" type="button" disabled="" onclick="commitanswer();" class="btn">確認</button>
+	    </div>
+	    
+	</div>
+	
+    <!-- 測驗結束後 -->
+    <div id="thank_zone" class="container" style="display: none; ">
+    	<!-- 作答情形區 -->
+    	<div class="container col-sm-3 text-center">
+>>>>>>> e1aeca1997ed972b9ca9ef7d2d05ddbb0485daa2
     	   	<h2 class="row">Thanks for Testing </h2>
     	   	<table class="table">
 	    		<thead>
