@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-23 04:47:12
+/* Smarty version 3.1.33, created on 2018-10-23 06:43:57
   from 'D:\xampp\htdocs\ilearning\templates\normtest.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bce8bb0748e12_71175960',
+  'unifunc' => 'content_5bcea70d39e767_44791066',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '98f06505b1c692ad32e75df7da0a60da90fdb420' => 
     array (
       0 => 'D:\\xampp\\htdocs\\ilearning\\templates\\normtest.html',
-      1 => 1540262832,
+      1 => 1540269837,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bce8bb0748e12_71175960 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bcea70d39e767_44791066 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -121,7 +121,7 @@ function content_5bce8bb0748e12_71175960 (Smarty_Internal_Template $_smarty_tpl)
 
 	    <!-- 確認 -->
 	    <div class="col-sm-5 col-sm-offset-4" style=" justify-content: center; padding-top: 20px;">
-	    	<strong>你的選擇 : <span id="choosen_option"></span> 。 </strong>
+	    	<strong>(點擊上方A、B、C、D)你的選擇 : <span id="choosen_option"></span> 。 </strong>
 	    	<button id="commit_btn" type="button" disabled="" onclick="commitanswer();" class="btn">確認</button>
 	    </div>
 
