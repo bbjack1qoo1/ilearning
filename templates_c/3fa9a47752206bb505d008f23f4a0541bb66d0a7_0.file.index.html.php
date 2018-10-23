@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-20 09:32:42
+/* Smarty version 3.1.33, created on 2018-10-23 04:30:35
   from 'D:\xampp\htdocs\ilearning\templates\index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bcada1ab22d04_55770359',
+  'unifunc' => 'content_5bce87cbda1861_79960888',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3fa9a47752206bb505d008f23f4a0541bb66d0a7' => 
     array (
       0 => 'D:\\xampp\\htdocs\\ilearning\\templates\\index.html',
-      1 => 1540020756,
+      1 => 1540229559,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bcada1ab22d04_55770359 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bce87cbda1861_79960888 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,10 +37,11 @@ function content_5bcada1ab22d04_55770359 (Smarty_Internal_Template $_smarty_tpl)
 >
 
     <link rel="stylesheet" type="text/css" href="templates/CSS/mycss.css">
+    <link rel="stylesheet" type="text/css" href="templates/CSS/navbar.css">
 
 </head>
 <body>
-    
+    <!--
     <nav class="navbar navbar-fixed-top" >
         <div class="container-fluid" >
             <div class="navbar-header">
@@ -57,6 +58,15 @@ function content_5bcada1ab22d04_55770359 (Smarty_Internal_Template $_smarty_tpl)
             </div>
         </div>
     </nav> 
+    -->
+    <ul id="navbar_ul">
+        <li id="navbar_li"><a class="active" href="index.php" class="nav navbar-inverse" >Home</a></li>
+        <li id="navbar_li" style="float:right"><a href="info.php" >說明</a></li>
+        <li id="navbar_li" style="float:right"><a href="#.php" >管理</a></li>
+		<li id="navbar_li" style="float:right"><a href="<?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+.php" ><?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+</a></li>
+  	</ul>
 
     <div class="jumbotron bg-success" id="jumbotron">
         <div class="container" align="center" style="color:white">
