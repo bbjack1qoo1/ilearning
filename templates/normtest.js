@@ -2,6 +2,7 @@
 
 // 測驗區變數
 var num ,
+	pre_page,
 	question_type,
 	test_zone,
 	option_a ,
@@ -25,6 +26,7 @@ var num ,
 //測驗結束後變數
 var  thank_zone,
 	result_tbody,
+	correct_num,
 	true_false_table = {
 		"student":"tester",
 		"email":"vvv@gmail.com",
@@ -41,10 +43,8 @@ window.onload = function(){
 	num=1;
 
 	//開始測驗前的注意事項
-	var notice_block = "聽力測驗開始\n注意事項:\n1.點選播放即撥放題目\n2.點選選項A、B、C、D則直接作答。";
-
-	//alert(notice_block);
-
+	
+	pre_page = document.getElementById("pre_page");
 	// 初始測驗區
 	test_zone = document.getElementById("test_zone");
 	question_type = document.getElementById("question_type");
@@ -69,11 +69,18 @@ window.onload = function(){
 
 	// 初始測驗結束區
 	thank_zone = document.getElementById("thank_zone");
+	correct_num = document.getElementById("correct_num");
 	result_tbody = document.getElementById("result_tbody");
 
 	update_content();
 }
 
+// 開始測驗
+function start_test() {
+	pre_page.style.display="none";
+	test_zone.style.display = "block";
+
+}
 
 // 選擇option
 function clickoption(option){
@@ -88,8 +95,8 @@ function update_content(){
 	// 題目區。更新
 	if (num<=4) {
 		
-		if(num==1)
-			alert("第一大題 單元音\n第一部分 選出單元音\n即將開始\n請聽發音，再選擇對應之單元音");
+		///if(num==1)
+			//alert("第一大題 單元音\n第一部分 選出單元音\n即將開始\n請聽發音，再選擇對應之單元音");
 
 		question_num.innerHTML=num;
 		question_type.innerHTML = question_json1.question_type[0];
@@ -104,8 +111,8 @@ function update_content(){
 		part1_container.style.display = "none";
 		part2_container.style.display = "block";
 
-		if(num==5)
-			alert("第一大題 單元音\n第二部分 選出正確的讀音\n即將開始\n請看單元音，再選擇對應之發音");
+		//if(num==5)
+			//alert("第一大題 單元音\n第二部分 選出正確的讀音\n即將開始\n請看單元音，再選擇對應之發音");
 
 		question_num.innerHTML=num;
 		question_type.innerHTML = question_json1.question_type[1];
@@ -119,8 +126,8 @@ function update_content(){
 		part1_container.style.display = "block";
 		part2_container.style.display = "none";
 
-		if(num==11)
-			alert("第二大題 單輔音\n第一部分 選出單輔音\n即將開始\n請聽發音，再選擇對應之單輔音");
+		//if(num==11)
+			//alert("第二大題 單輔音\n第一部分 選出單輔音\n即將開始\n請聽發音，再選擇對應之單輔音");
 
 
 		question_num.innerHTML=num;
@@ -136,8 +143,8 @@ function update_content(){
 		part1_container.style.display = "none";
 		part2_container.style.display = "block";
 
-		if(num==15)
-			alert("第二大題 單輔音\n第二部分 選出正確的讀音\n即將開始\n請看單輔音，再選擇對應之發音");
+		//if(num==15)
+			//alert("第二大題 單輔音\n第二部分 選出正確的讀音\n即將開始\n請看單輔音，再選擇對應之發音");
 
 		question_num.innerHTML=num;
 		question_type.innerHTML = question_json2.question_type[1];
@@ -152,8 +159,8 @@ function update_content(){
 		part1_container.style.display = "block";
 		part2_container.style.display = "none";
 		
-		if(num==21)
-			alert("第三大題 雙輔音\n第一部分 選出雙輔音\n即將開始\n請聽發音，再選擇對應之雙輔音");
+		//if(num==21)
+			//alert("第三大題 雙輔音\n第一部分 選出雙輔音\n即將開始\n請聽發音，再選擇對應之雙輔音");
 		
 
 		question_num.innerHTML=num;
@@ -169,8 +176,8 @@ function update_content(){
 		part1_container.style.display = "none";
 		part2_container.style.display = "block";
 
-		if(num==25)
-			alert("第三大題 雙輔音\n第二部分 選出正確的讀音\n即將開始\n請看雙輔音，再選擇對應之發音");
+		//if(num==25)
+			//alert("第三大題 雙輔音\n第二部分 選出正確的讀音\n即將開始\n請看雙輔音，再選擇對應之發音");
 
 		question_num.innerHTML=num;
 		question_type.innerHTML = question_json3.question_type[1];
@@ -207,7 +214,7 @@ function commitanswer(){
 
 
 function result(){
-
+	var correct = 0;
 	for (var i=0 ; i<answer_array.length; i++) {
 		var row = result_tbody.insertRow(i);
 		var cell1 = row.insertCell(0);
@@ -219,12 +226,14 @@ function result(){
 		cell3.innerHTML = correct_answer_array[i];
 
 		// 輸出結果
-		if(cell2.innerHTML==cell3.innerHTML)
+		if(cell2.innerHTML==cell3.innerHTML){
 			output_true_false_table(i,1);
+			correct++;
+		}
 		else 
 			output_true_false_table(i,0);
-		
 	}
+	correct_num.innerHTML = correct;
 	// alert最後結果 0或1
 	//alert(true_false_table.result);
 }
@@ -250,7 +259,7 @@ var question_json1 ={
 
 	"question":[
 		{	"mp3":"q1.mp3",
-			"A":"Ơ ơ" ,	"B":"Â â" ,	"C":"Â â" ,	"D":"E e"	},
+			"A":"Ơ ơ" ,	"B":"Â â" ,	"C":"I i" ,	"D":"E e"	},
 		{	"mp3":"q2.mp3",
 			"A":"Aa" ,	"B":"Oo" , 	"C":"Ê ê", 	"D":"Â â"	},
 		{	"mp3":"q3.mp3",
