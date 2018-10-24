@@ -3,24 +3,39 @@
 // 測驗區變數
 var num ,
 	pre_page,
-	question_type,
 	test_zone,
-	option_a ,
-	option_b ,
-	option_c ,
-	option_d ,
-	audio,
-	part1_container,
 	answer_array,
-	choosen_option,
-	commit_btn,
-	// 第二部分才會用到的變數
+	mode = 0,
+	// 範例變數
+	example_choosen_option,
+	example_commit_btn,
+	// 第一部分變數
+	part1_container,
+	part1_question_type,
+	part1_question_num,
+	part1_audio,
+	part1_option_a ,
+	part1_option_b ,
+	part1_option_c ,
+	part1_option_d ,
+	part1_choosen_option,
+	part1_commit_btn,
+	// 第二部分變數
 	part2_container,
+	part2_question_type,
+	part2_question_num,
 	part2_question,
+	part2_question_content,
+	part2_option_a,
+	part2_option_b,
+	part2_option_c,
+	part2_option_d,
 	part2_audio_a,
 	part2_audio_b,
 	part2_audio_c,
-	part2_audio_d
+	part2_audio_d,
+	part2_choosen_option,
+	part2_commit_btn
 	;
 
 //測驗結束後變數
@@ -45,27 +60,44 @@ window.onload = function(){
 	//開始測驗前的注意事項
 	
 	pre_page = document.getElementById("pre_page");
+	// 範例區
+	example_choosen_option = document.getElementById("example_choosen_option");
+	example_commit_btn = document.getElementById("example_commit_btn");
+
 	// 初始測驗區
-	test_zone = document.getElementById("test_zone");
-	question_type = document.getElementById("question_type");
-	question_num = document.getElementById("question_num");
-	option_a = document.getElementById("option_a");
-	option_b = document.getElementById("option_b");
-	option_c = document.getElementById("option_c");
-	option_d = document.getElementById("option_d");
-	audio = document.getElementById("audio");
-	part1_container = document.getElementById("part1_container");
-	choosen_option = document.getElementById("choosen_option");
-	commit_btn = document.getElementById("commit_btn");
 	answer_array = new Array();
+	test_zone = document.getElementById("test_zone");
+	
+	part1_container = document.getElementById("part1_container");	
+	part1_question_num = document.getElementById("part1_question_num");
+	part1_question_type = document.getElementById("part1_question_type");
+	part1_option_a = document.getElementById("part1_option_a");
+	part1_option_b = document.getElementById("part1_option_b");
+	part1_option_c = document.getElementById("part1_option_c");
+	part1_option_d = document.getElementById("part1_option_d");
+	part1_audio = document.getElementById("part1_audio");
+	part1_choosen_option = document.getElementById("part1_choosen_option");
+	part1_commit_btn = document.getElementById("part1_commit_btn");
+	
 	
 	part2_container = document.getElementById("part2_container");
+	part2_question_type = document.getElementById("part2_question_type");
+	part2_question_num = document.getElementById("part2_question_num");
+
 	part2_question = document.getElementById("part2_question");
+	part2_question_content = document.getElementById("part2_question_content");
+	part2_option_a = document.getElementById("part2_option_a");
+	part2_option_b = document.getElementById("part2_option_b");
+	part2_option_c = document.getElementById("part2_option_c");
+	part2_option_d = document.getElementById("part2_option_d");
+
 	part2_audio_a = document.getElementById("part2_audio_a");
 	part2_audio_b = document.getElementById("part2_audio_b");
 	part2_audio_c = document.getElementById("part2_audio_c");
 	part2_audio_d = document.getElementById("part2_audio_d");
-
+	part2_choosen_option = document.getElementById("part2_choosen_option");
+	part2_commit_btn = document.getElementById("part2_commit_btn");
+	
 
 	// 初始測驗結束區
 	thank_zone = document.getElementById("thank_zone");
@@ -84,9 +116,13 @@ function start_test() {
 
 // 選擇option
 function clickoption(option){
-	choosen_option.innerHTML=option;
-	commit_btn.removeAttribute("disabled");
-	
+	if (mode==0) {
+		part1_choosen_option.innerHTML=option;
+		part1_commit_btn.removeAttribute("disabled");
+	}else if(mode==1){
+		part2_choosen_option.innerHTML=option;
+		part2_commit_btn.removeAttribute("disabled");
+	}		
 }
 
 function update_content(){
@@ -94,60 +130,55 @@ function update_content(){
 
 	// 題目區。更新
 	if (num<=4) {
+		mode=0;
 		
-		///if(num==1)
-			//alert("第一大題 單元音\n第一部分 選出單元音\n即將開始\n請聽發音，再選擇對應之單元音");
-
-		question_num.innerHTML=num;
-		question_type.innerHTML = question_json1.question_type[0];
-		option_a.innerHTML=question_json1.question[num-1].A;
-		option_b.innerHTML=question_json1.question[num-1].B;
-		option_c.innerHTML=question_json1.question[num-1].C;
-		option_d.innerHTML=question_json1.question[num-1].D;
-		audio.src = "templates/audio/normtest/"+question_json1.mp3_location+question_json1.question[num-1].mp3;
+		part1_question_type.innerHTML = question_json1.question_type;
+		part1_question_num.innerHTML=num;
+		
+		part1_option_a.innerHTML=question_json1.question[num-1].A;
+		part1_option_b.innerHTML=question_json1.question[num-1].B;
+		part1_option_c.innerHTML=question_json1.question[num-1].C;
+		part1_option_d.innerHTML=question_json1.question[num-1].D;
+		part1_audio.src = "templates/audio/normtest/"+question_json1.mp3_location+question_json1.question[num-1].mp3;
 		
 	}else
 	if(5<=num && num<=10){
+		mode=1;
 		part1_container.style.display = "none";
 		part2_container.style.display = "block";
 
-		//if(num==5)
-			//alert("第一大題 單元音\n第二部分 選出正確的讀音\n即將開始\n請看單元音，再選擇對應之發音");
-
-		question_num.innerHTML=num;
-		question_type.innerHTML = question_json1.question_type[1];
-		part2_question.innerHTML = "單元音 : "+question_json1.question[num-1].question_text;
+		part2_question_num.innerHTML=num;
+		part2_question_type.innerHTML = question_json1.question_type;
+		part2_question.innerHTML = "單元音";
+		part2_question_content.innerHTML = question_json1.question[num-1].question_text;
 		part2_audio_a.src = "templates/audio/normtest/"+question_json1.mp3_location+question_json1.question[num-1].mp3a;
 		part2_audio_b.src = "templates/audio/normtest/"+question_json1.mp3_location+question_json1.question[num-1].mp3b;
 		part2_audio_c.src = "templates/audio/normtest/"+question_json1.mp3_location+question_json1.question[num-1].mp3c;
 		part2_audio_d.src = "templates/audio/normtest/"+question_json1.mp3_location+question_json1.question[num-1].mp3d;
+	
+
 	}else
 	if(11<=num && num<=14){
+		mode=0;
 		part1_container.style.display = "block";
 		part2_container.style.display = "none";
-
-		//if(num==11)
-			//alert("第二大題 單輔音\n第一部分 選出單輔音\n即將開始\n請聽發音，再選擇對應之單輔音");
-
-
-		question_num.innerHTML=num;
-		question_type.innerHTML = question_json2.question_type[0];
-		option_a.innerHTML=question_json2.question[num-11].A;
-		option_b.innerHTML=question_json2.question[num-11].B;
-		option_c.innerHTML=question_json2.question[num-11].C;
-		option_d.innerHTML=question_json2.question[num-11].D;
-		audio.src = "templates/audio/normtest/"+question_json2.mp3_location+question_json2.question[num-11].mp3;
-
-	}else
+		
+		part1_question_type.innerHTML = question_json2.question_type;
+		part1_question_num.innerHTML=num;
+		
+		part1_option_a.innerHTML=question_json2.question[num-11].A;
+		part1_option_b.innerHTML=question_json2.question[num-11].B;
+		part1_option_c.innerHTML=question_json2.question[num-11].C;
+		part1_option_d.innerHTML=question_json2.question[num-11].D;
+		part1_audio.src = "templates/audio/normtest/"+question_json2.mp3_location+question_json2.question[num-11].mp3;
+	}else 
 	if(15<=num && num<=20){
+		mode=1;
 		part1_container.style.display = "none";
 		part2_container.style.display = "block";
 
-		//if(num==15)
-			//alert("第二大題 單輔音\n第二部分 選出正確的讀音\n即將開始\n請看單輔音，再選擇對應之發音");
-
-		question_num.innerHTML=num;
-		question_type.innerHTML = question_json2.question_type[1];
+		part2_question_num.innerHTML=num;
+		part2_question_type.innerHTML = question_json2.question_type;
 		part2_question.innerHTML = "單輔音 : "+question_json2.question[num-11].question_text;
 		part2_audio_a.src = "templates/audio/normtest/"+question_json2.mp3_location+question_json2.question[num-11].mp3a;
 		part2_audio_b.src = "templates/audio/normtest/"+question_json2.mp3_location+question_json2.question[num-11].mp3b;
@@ -156,37 +187,32 @@ function update_content(){
 
 	}else
 	if(21<=num && num<=24){
+		mode=0;
 		part1_container.style.display = "block";
 		part2_container.style.display = "none";
 		
-		//if(num==21)
-			//alert("第三大題 雙輔音\n第一部分 選出雙輔音\n即將開始\n請聽發音，再選擇對應之雙輔音");
+		part1_question_type.innerHTML = question_json3.question_type;
+		part1_question_num.innerHTML=num;
 		
+		part1_option_a.innerHTML=question_json3.question[num-21].A;
+		part1_option_b.innerHTML=question_json3.question[num-21].B;
+		part1_option_c.innerHTML=question_json3.question[num-21].C;
+		part1_option_d.innerHTML=question_json3.question[num-21].D;
+		part1_audio.src = "templates/audio/normtest/"+question_json3.mp3_location+question_json3.question[num-21].mp3;
 
-		question_num.innerHTML=num;
-		question_type.innerHTML = question_json3.question_type[0];
-		option_a.innerHTML=question_json3.question[num-21].A;
-		option_b.innerHTML=question_json3.question[num-21].B;
-		option_c.innerHTML=question_json3.question[num-21].C;
-		option_d.innerHTML=question_json3.question[num-21].D;
-		audio.src = "templates/audio/normtest/"+question_json3.mp3_location+question_json3.question[num-21].mp3;
-
-	}else
-	if (25<=num && num<=28) {
+	}else 
+	if(25<=num && num<=28){
+		mode=1;
 		part1_container.style.display = "none";
 		part2_container.style.display = "block";
 
-		//if(num==25)
-			//alert("第三大題 雙輔音\n第二部分 選出正確的讀音\n即將開始\n請看雙輔音，再選擇對應之發音");
-
-		question_num.innerHTML=num;
-		question_type.innerHTML = question_json3.question_type[1];
+		part2_question_num.innerHTML=num;
+		part2_question_type.innerHTML = question_json3.question_type;
 		part2_question.innerHTML = "雙輔音 : "+question_json3.question[num-21].question_text;
 		part2_audio_a.src = "templates/audio/normtest/"+question_json3.mp3_location+question_json3.question[num-21].mp3a;
 		part2_audio_b.src = "templates/audio/normtest/"+question_json3.mp3_location+question_json3.question[num-21].mp3b;
 		part2_audio_c.src = "templates/audio/normtest/"+question_json3.mp3_location+question_json3.question[num-21].mp3c;
 		part2_audio_d.src = "templates/audio/normtest/"+question_json3.mp3_location+question_json3.question[num-21].mp3d;
-
 
 	}else{
 		test_zone.style.display = "none" ;
@@ -202,14 +228,26 @@ function update_content(){
 
 // 送出選擇 及 是否已經答題完成
 function commitanswer(){
-	answer_array[num-1]=choosen_option.innerHTML;
-	num++;
-	// 更新介面
-	update_content();
+	if(mode==0){
+		answer_array[num-1]=part1_choosen_option.innerHTML;
+		num++;
+		// 更新介面
+		update_content();
 		
-	// 送出後，將btn鎖死。並且更新choosen_option
-	choosen_option.innerHTML=null;
-	commit_btn.setAttribute('disabled','');
+		// 送出後，將btn鎖死。並且更新choosen_option
+		part1_choosen_option.innerHTML=null;
+		part1_commit_btn.setAttribute('disabled','');
+	}else if(mode==1){
+		answer_array[num-1]=part2_choosen_option.innerHTML;
+		num++;
+		// 更新介面
+		update_content();
+		
+		// 送出後，將btn鎖死。並且更新choosen_option
+		part2_choosen_option.innerHTML=null;
+		part2_commit_btn.setAttribute('disabled','');
+	}
+	
 }
 
 
@@ -235,7 +273,7 @@ function result(){
 	}
 	correct_num.innerHTML = correct;
 	// alert最後結果 0或1
-	//alert(true_false_table.result);
+	alert(true_false_table.result);
 }
 
 
@@ -245,7 +283,15 @@ function output_true_false_table(i,x){
 	true_false_table.result[i]=x;
 }
 
-
+function example_clickoption(option) {
+	// body...
+	example_choosen_option.innerHTML = option;
+	example_commit_btn.removeAttribute('disabled');
+}
+function example_commit(){
+	example_choosen_option.innerHTML ="　";
+	example_commit_btn.setAttribute('disabled','');
+}
 
 
 
@@ -253,7 +299,7 @@ function output_true_false_table(i,x){
 
 var question_json1 ={
 
-	"question_type":["一、 Nghe và chọn : 選出正確的單元音","一、 Nghe và chọn : 選出正確的讀音"],
+	"question_type":"一、 單元音：nguyên âm ",
 
 	"mp3_location":"unitsound/",
 
@@ -263,7 +309,7 @@ var question_json1 ={
 		{	"mp3":"q2.mp3",
 			"A":"Aa" ,	"B":"Oo" , 	"C":"Ê ê", 	"D":"Â â"	},
 		{	"mp3":"q3.mp3",
-			"A":"i" ,	"B":"i" ,	"C":"ư" ,	"D":"ê"		},
+			"A":"i" ,	"B":"e" ,	"C":"ư" ,	"D":"ê"		},
 		{	"mp3":"q4.mp3",
 			"A":"ơ" , "B":"a" , "C":"ô" , "D":"e"},
 		{	"question_text" : "o",
@@ -290,7 +336,7 @@ var question_json1 ={
 };
 
 var question_json2 = {
-	"question_type":["二、 Nghe và chọn : 選出正確的單輔音","二、 Nghe và chọn : 選出正確的讀音"],
+	"question_type":"二、 單輔音：phụ âm đơn",
 
 	"mp3_location":"singleconsonant/",
 
@@ -328,7 +374,7 @@ var question_json2 = {
 
 
 var question_json3 = {
-	"question_type":["三、Nghe và chọn : 選出正確的雙輔音","三、	Nghe và chọn : 選出正確的讀音"],
+	"question_type":"三、雙輔音：Phụ âm kép",
 
 	"mp3_location":"doubleconsonant/",
 
@@ -358,8 +404,3 @@ var question_json3 = {
 	"answer":["B","C","A","D","A","C","B","D"]
 };
 
-var question_all = {
-	"question_js1" : question_json1,
-	"question_js2" : question_json2,
-	"question_js3" : question_json3  
-};
