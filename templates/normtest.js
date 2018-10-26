@@ -179,7 +179,8 @@ function update_content(){
 
 		part2_question_num.innerHTML=num;
 		part2_question_type.innerHTML = question_json2.question_type;
-		part2_question.innerHTML = "單輔音 : "+question_json2.question[num-11].question_text;
+		part2_question.innerHTML = "單輔音 ";
+		part2_question_content.innerHTML = question_json2.question[num-11].question_text;
 		part2_audio_a.src = "templates/audio/normtest/"+question_json2.mp3_location+question_json2.question[num-11].mp3a;
 		part2_audio_b.src = "templates/audio/normtest/"+question_json2.mp3_location+question_json2.question[num-11].mp3b;
 		part2_audio_c.src = "templates/audio/normtest/"+question_json2.mp3_location+question_json2.question[num-11].mp3c;
@@ -208,7 +209,8 @@ function update_content(){
 
 		part2_question_num.innerHTML=num;
 		part2_question_type.innerHTML = question_json3.question_type;
-		part2_question.innerHTML = "雙輔音 : "+question_json3.question[num-21].question_text;
+		part2_question.innerHTML = "雙輔音 ";
+		part2_question_content.innerHTML = question_json2.question[num-21].question_text;
 		part2_audio_a.src = "templates/audio/normtest/"+question_json3.mp3_location+question_json3.question[num-21].mp3a;
 		part2_audio_b.src = "templates/audio/normtest/"+question_json3.mp3_location+question_json3.question[num-21].mp3b;
 		part2_audio_c.src = "templates/audio/normtest/"+question_json3.mp3_location+question_json3.question[num-21].mp3c;
@@ -273,7 +275,7 @@ function result(){
 	}
 	correct_num.innerHTML = correct;
 	// alert最後結果 0或1
-	alert(true_false_table.result);
+	//alert(true_false_table.result);
 }
 
 

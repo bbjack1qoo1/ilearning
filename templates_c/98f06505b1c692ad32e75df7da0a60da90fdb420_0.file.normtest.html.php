@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-24 10:35:13
+/* Smarty version 3.1.33, created on 2018-10-26 07:31:45
   from 'D:\xampp\htdocs\ilearning\templates\normtest.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bd02ec1ea9f56_50993237',
+  'unifunc' => 'content_5bd2a6c1068ce1_00101452',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '98f06505b1c692ad32e75df7da0a60da90fdb420' => 
     array (
       0 => 'D:\\xampp\\htdocs\\ilearning\\templates\\normtest.html',
-      1 => 1540370113,
+      1 => 1540531904,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bd02ec1ea9f56_50993237 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bd2a6c1068ce1_00101452 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,6 +44,7 @@ function content_5bd02ec1ea9f56_50993237 (Smarty_Internal_Template $_smarty_tpl)
     		
     		font-size: 20px;
     	}
+    
     </style>
 
     <title>常模測驗</title>
@@ -53,11 +54,11 @@ function content_5bd02ec1ea9f56_50993237 (Smarty_Internal_Template $_smarty_tpl)
 	<div class="navbar navbar-inverse">
 		<div class="container-fluid">
     		<div class="navbar-header">
-      			<a class="navbar-brand" >Language Test</a>
+      			<a class="navbar-brand" >語言測驗</a>
     		</div>
     		<ul class="nav navbar-nav navbar-right">
-      			<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      			<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      			<li><a href="#"><span class="glyphicon glyphicon-user"></span>註冊</a></li>
+      			<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登入</a></li>
     		</ul>
   		</div>
   	</div>
@@ -89,7 +90,7 @@ function content_5bd02ec1ea9f56_50993237 (Smarty_Internal_Template $_smarty_tpl)
 					<div class="container col-sm-8">
 						<!-- 音檔播放區 -->
 					    <div class="container" style="padding-top: 15px;">
-					    	<audio src="templates/audio/normtest/unitsound/q3.mp3" controls="controls" controlsList="nodownload" oncontextmenu="return false">
+					    	<audio  src="templates/audio/normtest/unitsound/q3.mp3" controls="controls" controlsList="nodownload" oncontextmenu="return false">
 					    	</audio>
 					    </div>
 					    <!-- 選擇區 -->
@@ -144,7 +145,7 @@ function content_5bd02ec1ea9f56_50993237 (Smarty_Internal_Template $_smarty_tpl)
 			<div class="container col-sm-8">
 				<!-- 音檔播放區 -->
 			    <div class="container" style="padding-top: 15px;">
-			    	<audio id="part1_audio" src="" controls="controls" controlsList="nodownload" oncontextmenu="return false">
+			    	<audio id="part1_audio" src="" controls="controls" controlsList="nodownload "  oncontextmenu="return false">
 			    	</audio>
 			    </div>
 			    <!-- 選擇區 -->
@@ -193,20 +194,24 @@ function content_5bd02ec1ea9f56_50993237 (Smarty_Internal_Template $_smarty_tpl)
 		   			<h3><strong id="part2_question"></strong></h3>
 		   			<h2 ><strong id="part2_question_content"> </strong></h2>
 		   		</div>
-		   		<div class="container col-sm-4" style="padding-top: 15px">
+		   		<div class="container col-sm-8" style="padding-top: 15px">
 		   			<div class="row" style="padding-top: 10px">
-		   				<button class="btn" id="part2_option_a" onclick="clickoption('A')"><strong>A</strong><audio id="part2_audio_a" src="" controls="controls" controlsList="nodownload"></audio></button>
+		   				<button class="btn align-top" id="part2_option_a" onclick="clickoption('A')" ><strong>A</strong></button>
+		   				<audio id="part2_audio_a" src="" controls="controls" onclick="clickoption('A')" controlsList="nodownload" style="vertical-align: middle;"></audio>
 		   			</div>
 					
 					<div class="row" style="padding-top: 10px">
-						<button class="btn" id="part2_option_b" onclick="clickoption('B')"><strong>B</strong><audio id="part2_audio_b" src="" controls="controls" controlsList="nodownload"></audio></button>
+						<button class="btn align-top" id="part2_option_b" onclick="clickoption('B')" ><strong>B</strong></button>
+						<audio id="part2_audio_b" src="" controls="controls" onclick="clickoption('B')" controlsList="nodownload" style="vertical-align: middle;"></audio>
 					</div>
 					<div class="row" style="padding-top: 10px">
-						<button class="btn" id="part2_option_c" onclick="clickoption('C')"><strong>C</strong><audio id="part2_audio_c" src="" controls="controls" controlsList="nodownload"></audio></button>
+						<button class="btn align-top" id="part2_option_b" onclick="clickoption('C')" ><strong>C</strong></button>
+						<audio id="part2_audio_c" src="" controls="controls" onclick="clickoption('C')" controlsList="nodownload" style="vertical-align: middle;"></audio>
 					</div>
 		    	
 		    		<div class="row" style="padding-top: 10px">
-		    			<button class="btn" id="part2_option_d" onclick="clickoption('D')"><strong>D</strong><audio id="part2_audio_d" src="" controls="controls" controlsList="nodownload"></audio></button>
+						<button class="btn align-top" id="part2_option_b" onclick="clickoption('D')" ><strong>D</strong></button>
+		    			<audio id="part2_audio_d" src="" controls="controls" onclick="clickoption('D')" controlsList="nodownload" style="vertical-align: middle;"></audio>
 		    		</div>
 		   		</div>
 		    </div>	
